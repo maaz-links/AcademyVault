@@ -1,0 +1,102 @@
+# ----------------------
+
+# Python
+
+# ----------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+
+.venv/
+venv/
+env/
+
+# ----------------------
+
+# Django
+
+# ----------------------
+
+db.sqlite3
+db.sqlite3-journal
+
+# Django media uploads
+
+media/
+
+# Collected static files
+
+staticfiles/
+
+# Local settings
+
+local_settings.py
+
+# Logs
+
+*.log
+
+# ----------------------
+
+# Environment variables
+
+# ----------------------
+
+.env
+.env.local
+.env.production
+*.env
+
+# ----------------------
+
+# Python tooling
+
+# ----------------------
+
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# ----------------------
+
+# Editor / IDE
+
+# ----------------------
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------
+
+# OS files
+
+# ----------------------
+
+.DS_Store
+Thumbs.db
+
+# ----------------------
+
+# Node / React
+
+# ----------------------
+
+node_modules/
+build/
+dist/
+
+# ----------------------
+
+# Misc
+
+# ----------------------
+
+*.bak
+*.tmp
