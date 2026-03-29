@@ -1,4 +1,4 @@
-# 🎓 Django + React Subscription-Based Learning Platform
+# 🎓 AcademyVault
 
 A full-stack web application built with Django and React that delivers educational content with a subscription-based access model. Users can download learning materials and upgrade to premium plans via secure Stripe integration.
 
@@ -72,11 +72,21 @@ A full-stack web application built with Django and React that delivers education
 
 ---
 
+## 📸 Screenshots
+
+![Dashboard](./screenshots/scr-home.png)
+
+![Pricing](./screenshots/scr-pricing.png)
+
+![Checkout](./screenshots/scr-checkout.png)
+
+---
+
 ## 🎥 Demo
 
 Watch the full walkthrough of the application here:
 
-👉 https://www.youtube.com/watch?v=link
+👉 https://youtu.be/dgxv9W4lYPQ
 
 The demo covers:
 
@@ -84,7 +94,6 @@ The demo covers:
 * Accessing free vs premium content
 * Subscription flow using Stripe Checkout
 * Managing subscriptions via Billing Portal
-* Admin panel for content and user management
 
 ---
 
@@ -245,7 +254,7 @@ poetry run python manage.py runserver
 Backend will run at:
 
 ```
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/admin
 ```
 
 ---
@@ -308,6 +317,13 @@ Make sure to update your `.env` with the generated webhook secret.
 * Deployment (Docker + CI/CD)
 
 ---
+
+## 📧 Contact
+
+If you have any questions, feedback, or opportunities to collaborate, feel free to reach out:
+
+- **Email:** mzit3116@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/maazpro
 
 ---
 

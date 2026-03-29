@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import EducationalContent
-
+from subscriptions.serializers import TierSerializer
 from django.urls import reverse
 
 # class EducationalContentSerializer(serializers.ModelSerializer):
@@ -12,10 +12,12 @@ class EducationalContentSerializer(serializers.ModelSerializer):
     download_url = serializers.SerializerMethodField()
     is_accessible = serializers.SerializerMethodField()
     file = serializers.FileField(write_only=True)
+    tier = TierSerializer(read_only=True)
+
 
     class Meta:
         model = EducationalContent
-        fields = ["id", "title", "description","file", "download_url", "is_accessible"]
+        fields = ["id", "title", "description","file", "download_url", "is_accessible", "tier"]
 
     def get_is_accessible(self, obj):
         request = self.context.get("request")

@@ -96,7 +96,7 @@ export default function Checkout() {
               </div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">You already have an active subscription</h3>
               <p className="text-gray-500 mb-8">
-                To upgrade, downgrade, or modify your current plan (${subStatus.tier_name}), please continue to the billing portal.
+                To upgrade, downgrade, or modify your current plan ({subStatus.tier_name}), please continue to the billing portal.
               </p>
               <button
                 onClick={handleAction}
@@ -132,8 +132,8 @@ export default function Checkout() {
           )}
           
           <div className="mt-6 text-center">
-            <button onClick={() => navigate('/tiers')} className="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors">
-              &larr; Back to Tiers
+            <button onClick={() => navigate(-1)} className="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors">
+              &larr; Go Back
             </button>
           </div>
         </div>

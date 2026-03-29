@@ -40,7 +40,13 @@ export default function Tiers() {
 
   return (
     <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto relative px-4 text-center">
+        <button 
+          onClick={() => navigate("/")} 
+          className="absolute left-4 top-0 text-indigo-600 hover:text-indigo-800 font-medium flex items-center transition-colors"
+        >
+          &larr; Go Back
+        </button>
         <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Pricing</h2>
         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Choose Your Plan

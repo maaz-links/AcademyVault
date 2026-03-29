@@ -71,10 +71,8 @@ def billing_portal(request):
         return Response({"error": "No active subscription"}, status=400)
 
     portal = stripe.billing_portal.Session.create(
-
         customer=subscription.stripe_customer_id,
-
-        return_url="http://localhost:5173/account"
+        return_url=f"{domain_url}/tiers"
     )
 
     return Response({

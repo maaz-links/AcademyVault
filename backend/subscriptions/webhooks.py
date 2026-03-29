@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from .models import UserSubscription, Tier
 import stripe
-from datetime import datetime
-from django.utils import timezone
+from datetime import datetime, timezone
+from django.utils import timezone as dj_timezone
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -61,8 +61,8 @@ def stripe_webhook(request):
 
         # Stripe timestamps are in seconds
         period_end_ts = invoice["lines"]["data"][0]["period"]["end"]
-        period_end = datetime.fromtimestamp(period_end_ts)
-        active_status = period_end > timezone.now()
+        period_end = datetime.fromtimestamp(period_end_ts, tz=timezone.utc)
+        active_status = period_end > dj_timezone.now()
 
         subscription = UserSubscription.objects.filter(
             stripe_subscription_id=subscription_id
@@ -103,9 +103,9 @@ def stripe_webhook(request):
 
             # Update current_period_end
             if sub.get("current_period_end"):
-                period_end = datetime.fromtimestamp(sub["current_period_end"])
+                period_end = datetime.fromtimestamp(period_end_ts, tz=timezone.utc)
                 subscription.current_period_end = period_end
-                subscription.active = period_end > timezone.now()
+                subscription.active = period_end > dj_timezone.now()
 
             subscription.save()
 

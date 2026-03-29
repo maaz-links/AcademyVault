@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Banner */}
-      <div className="bg-indigo-600 text-white py-12 px-4 shadow-md sm:px-6 lg:px-8">
+      <div className="bg-indigo-700 text-white py-12 px-4 shadow-md sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <div className="mb-4 md:mb-0">
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -80,20 +80,30 @@ export default function Home() {
                 </div>
                 <p className="text-gray-600 mb-6 line-clamp-3">{item.description}</p>
               </div>
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                
+                {/* LEFT SIDE: access / download */}
                 {item.is_accessible && item.download_url ? (
                   <a 
-                    href={item.download_url} 
+                    href={item.download_url} target="_blank"
                     className="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
                   >
                     Download Resource
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
                   </a>
                 ) : (
                   <span className="inline-flex items-center text-sm font-medium text-gray-400 cursor-not-allowed">
                     Upgrade to access
                   </span>
                 )}
+
+                {/* RIGHT SIDE: tier badge */}
+                {!item.tier?.is_default && <span className="ml-4 inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-black-400">
+                  {item.tier?.name}
+                </span>}
+
               </div>
             </div>
           ))}

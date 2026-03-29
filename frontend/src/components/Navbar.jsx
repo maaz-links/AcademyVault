@@ -10,11 +10,22 @@ export default function Navbar() {
   };
 
   return (
-    <nav style={{ display: 'flex', gap: '10px', padding: '15px 20px', background: '#2c3e50', color: '#fff', alignItems: 'center' }}>
-      <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '18px' }}>My App</Link>
-      <div style={{ marginLeft: 'auto' }}>
-        <button onClick={onLogout} style={{ background: '#e74c3c', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '4px', cursor: 'pointer' }}>Logout</button>
+    <nav className="bg-indigo-800 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          <Link to="/" className="text-white font-extrabold text-xl tracking-tight hover:text-indigo-100 transition-colors">
+            AcademyVault
+          </Link>
+          <div className="flex items-center space-x-4">
+            <button 
+              onClick={onLogout} 
+              className="bg-indigo-500 hover:bg-indigo-400 text-white px-5 py-2 rounded-md text-sm font-semibold transition-colors shadow-sm"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
-  )
+  );
 }

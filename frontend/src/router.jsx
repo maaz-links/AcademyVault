@@ -5,15 +5,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Tiers from "./pages/Tiers";
-
-
-function Success() {
-  return <h1>Subscription Successful!</h1>;
-}
-
-function Cancel() {
-  return <h1>Subscription Canceled.</h1>;
-}
+import Success from "./pages/Success";
+import Cancel from "./pages/Cancel";
 
 const router = createBrowserRouter([
   {
