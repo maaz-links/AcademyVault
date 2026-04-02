@@ -330,3 +330,5 @@ If you have any questions, feedback, or opportunities to collaborate, feel free 
 ## 📄 License
 
 This project is for educational and portfolio purposes.
+
+![Profile Views](https://komarev.com/ghpvc/?username=maaz-links&color=blue)
